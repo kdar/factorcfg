@@ -134,6 +134,25 @@ func (l *Loader) applyr(s reflect.Value) {
 			default:
 				f.Set(reflect.ValueOf(value))
 			}
+
+		case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+			switch vt := value.(type) {
+			case string:
+				intValue, err := strconv.ParseUint(vt, 0, f.Type().Bits())
+				if err != nil {
+					l.saveError(&ParseError{
+						FieldName: fieldName,
+						TypeName:  f.Kind().String(),
+						Value:     value,
+					})
+					continue
+				}
+
+				f.SetUint(intValue)
+			default:
+				f.Set(reflect.ValueOf(value))
+			}
+
 		case reflect.Bool:
 			switch vt := value.(type) {
 			case string:
