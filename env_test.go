@@ -3,11 +3,12 @@ package factorcfg
 import (
 	"os"
 	"testing"
+
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func setupEnv() {
-	os.Setenv("FACTORCFG_A", "hey")
+	os.Setenv("FACTORCFG_A", "hey===stuff=things=")
 	os.Setenv("FACTORCFG_B", "5")
 	os.Setenv("FACTORCFG_C", "1.6")
 	os.Setenv("FACTORCFG_D", "hey,there,guy")

@@ -17,7 +17,7 @@ type cfgTest struct {
 }
 
 var cfgExample = &cfgTest{
-	A: "hey",
+	A: "hey===stuff=things=",
 	B: 5,
 	C: 1.6,
 	D: []string{"hey", "there", "guy"},
