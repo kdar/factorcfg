@@ -21,7 +21,7 @@ func (e *Env) All() (map[string]interface{}, error) {
 	env := os.Environ()
 	m := make(map[string]interface{})
 	for _, pair := range env {
-		kv := strings.Split(pair, "=")
+		kv := strings.SplitN(pair, "=", 2)
 		if kv != nil && len(kv) >= 2 {
 			m[kv[0]] = kv[1]
 		}

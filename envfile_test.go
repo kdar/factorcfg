@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	testEnvFile = `FACTORCFG_A=hey
+	testEnvFile = `FACTORCFG_A=hey===stuff=things=
 FACTORCFG_B=5
 FACTORCFG_C=1.6
 FACTORCFG_D=hey,there,guy
